@@ -1,0 +1,29 @@
+{
+  "name": "parabox-fcm-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojhdt/parabox-fcm-server.git"
+  },
+  "keywords": [
+    "fcm"
+  ],
+  "author": "Ojhdt",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ojhdt/parabox-fcm-server/issues"
+  },
+  "homepage": "https://github.com/ojhdt/parabox-fcm-server#readme",
+  "dependencies": {
+    "firebase-admin": "^11.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
