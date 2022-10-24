@@ -5,6 +5,7 @@ const server = require("./bin/server")
 
 const handleIndexRoute = require("./src/routes/index")
 const handleReceiveRoute = require("./src/routes/receive")
+const handleSendRoute = require("./src/routes/send")
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
@@ -28,6 +29,13 @@ const serverHandler = (req, res) => {
     const receiveResponse = handleReceiveRoute(req, res);
     if (receiveResponse) {
         console.log("receive")
+        res.end();
+        return;
+    }
+
+    const sendResponse = handleSendRoute(req, res);
+    if (sendResponse) {
+        console.log("send")
         res.end();
         return;
     }
