@@ -17,6 +17,22 @@ const sendAll = (data, notification, tokens) => {
     tokens.forEach(token => {
         const message = {
             data: data,
+            token: token
+        };
+        admin.messaging().send(message)
+            .then((response) => {
+                console.log('Successfully sent message:', response);
+            })
+            .catch((error) => {
+                console.log('Error sending message:', error);
+            });
+    })
+}
+
+const sendAllWithNotification = (data, notification, tokens) => {
+    tokens.forEach(token => {
+        const message = {
+            data: data,
             notification: notification,
             token: token
         };
@@ -32,3 +48,4 @@ const sendAll = (data, notification, tokens) => {
 
 module.exports.send = send
 module.exports.sendAll = sendAll
+module.exports.sendAllWithNotification = sendAllWithNotification
