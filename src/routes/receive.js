@@ -12,9 +12,10 @@ const handleReceiveRoute = (req, res) => {
             const parsedBody = Buffer.concat(body).toString();
             const data = JSON.parse(parsedBody);
             console.log(data)
-            var { receiveMessageDto, targetTokensSet } = data;
+            var { receiveMessageDto, notification, targetTokensSet } = data;
             push.sendAll({
                 dto: JSON.stringify(receiveMessageDto),
+                notification: JSON.stringify(notification),
                 type: "receive"
             }, targetTokensSet);
             // push.send(data, data.token);

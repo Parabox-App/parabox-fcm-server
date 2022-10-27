@@ -13,10 +13,11 @@ const send = (data, token) => {
         });
 }
 
-const sendAll = (data, tokens) => {
+const sendAll = (data, notification, tokens) => {
     tokens.forEach(token => {
         const message = {
             data: data,
+            notification: notification,
             token: token
         };
         admin.messaging().send(message)
