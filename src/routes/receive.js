@@ -16,7 +16,7 @@ const handleReceiveRoute = (req, res) => {
             push.sendAll({
                 dto: JSON.stringify(receiveMessageDto),
                 type: "receive"
-            }, JSON.stringify(notification), targetTokensSet);
+            }, notification, targetTokensSet);
             // push.send(data, data.token);
         });
         return true
